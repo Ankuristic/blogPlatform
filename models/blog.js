@@ -14,18 +14,10 @@ const blogSchema = mongoose.Schema({
         type:String
     },
 
-    timeStamp:{
-         type:String
-    }
+},
+{timestamps: true }
 
-    
-
-   //   vote:{
-   //      type:boolean
-
-   //   }
-
-})
+)
 
 var blogdata=mongoose.model('blogdata',blogSchema);
 console.log("blogdata", blogdata);

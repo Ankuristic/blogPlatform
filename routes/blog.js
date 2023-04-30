@@ -9,14 +9,18 @@ console.log('router loaded');
 router.post("/create", blog.createBlogs);
 
 // get all the blogs 
-router.post("get",blog.getBlogs);
+router.get("/getBlog",blog.getBlog);
+
+// get blog by the id 
+router.get("/getBlogid/:id",blog.getBlogById);
+
 
 //update all the blogs
-router.post("update",blogs.updateblogs);
+router.post("update/:id",blog.updateBlogs);
 
 // delete all the blogs
 
-router.post("delete",blogs.deleteblogs)
+router.post("delete/:id",blog.deleteBlogs)
 
 
 module.exports = router;

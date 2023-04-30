@@ -15,7 +15,7 @@ const  createBlogs =  async (req, res) => {
      const ankur=   await blogs.save();
      console.log("ankur",ankur);
 
-        res.status(201).json(blogs);
+        res.status(200).json(blogs);
 
     } catch(error) {
         res.status(400).json({ message : error.message});
@@ -25,12 +25,13 @@ const  createBlogs =  async (req, res) => {
 
 
 
-const getRoutes = async (req, res) => {
+const getBlog = async (req, res) => {
     try {
       const blogs = await Blogs.find({ isActive: true }) 
+      console.log("blog",blog);
       return res.status(200).json({
-        productsData: products,
-        message: "Products fetched Successfully"
+        blogsData:blogs,
+        message: "blogs fetched Successfully"
       });
     } catch (err) {
       return res
@@ -42,7 +43,9 @@ const getRoutes = async (req, res) => {
  const getBlogById = async (req, res) => {
     try {
       const BlogId = req.params.id;
+      console.log("BlogId",BlogId);
       const blogs = await Blogs.findById(blogId);
+      console.log("blog",blog);
       if (!blogs) {
         return res.status(400).json({ message: "blogs Not found" });
       }
@@ -99,8 +102,9 @@ const updateBlogs = async (req, res) => {
   
 module.exports ={
     createBlogs,
-    getRoutes,
+    getBlog,
     getBlogById,
+    updateBlogs,
     deleteBlogs
 
 
