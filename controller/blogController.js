@@ -7,11 +7,6 @@ const Blogs= require('../models/blog')
 const  createBlogs =  async (req, res) => {
     console.log(req.body.title);
     const blogs = new Blogs({
-        // name:req.body.name,
-        // roll:req.body.roll,
-        // registration:req.body.registration,
-        // subjects:req.body.subjects,
-        // created_on:req.body.created_on
         title:req.body.title,
         author:req.body.author,
         content:req.body.content,
@@ -27,3 +22,11 @@ const  createBlogs =  async (req, res) => {
     }
 
 }
+
+
+module.exports ={
+    createBlogs,
+   
+
+
+  }

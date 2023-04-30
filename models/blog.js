@@ -28,4 +28,5 @@ const blogSchema = mongoose.Schema({
 })
 
 var blogdata=mongoose.model('blogdata',blogSchema);
+console.log("blogdata", blogdata);
 module.exports= blogdata;
